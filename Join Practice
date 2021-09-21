@@ -1,39 +1,40 @@
 1. Customers and internet packages (Customers & Packages tables) 
   
-        a) Write a query to display first name, last name, package number and internet speed for all customers.
+        	a) Write a query to display first name, last name, package number and internet speed for all customers.
 
-SELECT customers.First_Name, customers.Last_Name, packages.speed FROM customers INNER JOIN dbo.packages ON customers.pack_id = packages.pack_id
+SELECT customers.First_Name, customers.Last_Name, packages.speed 
+FROM customers INNER JOIN dbo.packages ON customers.pack_id = packages.pack_id
 
-        b) Write a query to display first name, last name, package number and internet speed for all customers whose package number equals 22 or 27. Order the query in ascending order by last name.
+        	b) Write a query to display first name, last name, package number and internet speed for all customers whose package number equals 22 or 27. Order the query in ascending order by last name.
   
 SELECT customers.First_Name
       ,customers.Last_Name
       ,packages.speed
-	    ,customers.pack_id
-  FROM customers INNER JOIN dbo.packages ON customers.pack_id = packages.pack_id
-  WHERE customers.pack_id = 22 or customers.pack_id = 27
+      ,customers.pack_id
+FROM customers INNER JOIN dbo.packages ON customers.pack_id = packages.pack_id
+WHERE customers.pack_id = 22 or customers.pack_id = 27
 
 
 2. Internet packages and sectors 
 
-        a) Display the package number, internet speed, monthly payment and sector name for all packages (Packages and Sectors tables).
+        	a) Display the package number, internet speed, monthly payment and sector name for all packages (Packages and Sectors tables).
   
-  SELECT packages.pack_id, packages.speed,packages.monthly_payment , sectors.sector_name
+SELECT packages.pack_id, packages.speed,packages.monthly_payment , sectors.sector_name
 FROM packages INNER JOIN dbo.sectors ON packages.sector_id = sectors.sector_id
   
   
-       b) Display the customer name, package number, internet speed, monthly payment and sector name for all customers 
-       (Customers, Packages and Sectors tables).
+       		b) Display the customer name, package number, internet speed, monthly payment and sector name for all customers 
+       		(Customers, Packages and Sectors tables).
   
   
   
   
-      c) Display the customer name, package number, internet speed, monthly payment and sector name for all customers in the business sector (Customers, Packages and Sectors tables).
+      		c) Display the customer name, package number, internet speed, monthly payment and sector name for all customers in the business sector (Customers, Packages and Sectors tables).
   
   
   
   
-      d) Display the last name, first name, join date, package number, internet speed and sector name for all customers in the private sector who joined the company in the year 2006.
+      		d) Display the last name, first name, join date, package number, internet speed and sector name for all customers in the private sector who joined the company in the year 2006.
 
 
 
