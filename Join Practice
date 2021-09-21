@@ -26,16 +26,38 @@ FROM packages INNER JOIN dbo.sectors ON packages.sector_id = sectors.sector_id
        		b) Display the customer name, package number, internet speed, monthly payment and sector name for all customers 
        		(Customers, Packages and Sectors tables).
   
+ SELECT customers.Last_Name
+       ,customers.pack_id
+	     ,packages.speed
+	     ,packages.monthly_payment
+       ,sectors.sector_name
+FROM customers JOIN dbo.packages ON customers.pack_id = packages.pack_id 
+JOIN sectors ON packages.sector_id = sectors.sector_id
   
   
+      		c) Display the customer name, package number, internet speed, monthly payment and sector name for all customers in the business sector 
+          (Customers, Packages and Sectors tables).
   
-      		c) Display the customer name, package number, internet speed, monthly payment and sector name for all customers in the business sector (Customers, Packages and Sectors tables).
+  SELECT customers.Last_Name
+        ,customers.pack_id
+	      ,packages.speed
+	      ,packages.monthly_payment
+	      ,sectors.sector_name
+  FROM customers JOIN dbo.packages ON customers.pack_id = packages.pack_id 
+  JOIN sectors ON packages.sector_id = sectors.sector_id WHERE sectors.sector_name = 'Business'
   
   
-  
-  
-      		d) Display the last name, first name, join date, package number, internet speed and sector name for all customers in the private sector who joined the company in the year 2006.
+      		d) Display the last name, first name, join date, package number, internet speed and sector name for all customers 
+          in the private sector who joined the company in the year 2006.
 
-
+SELECT customers.First_Name
+	    ,customers.Last_Name
+	    ,customers.Join_Date
+      ,customers.pack_id
+	    ,packages.speed
+	   ,packages.monthly_payment
+	   ,sectors.sector_name
+  FROM customers JOIN dbo.packages ON customers.pack_id = packages.pack_id 
+  JOIN sectors ON packages.sector_id = sectors.sector_id WHERE sectors.sector_name = 'Private' AND customers.Join_Date LIKE '2006%'
 
 
