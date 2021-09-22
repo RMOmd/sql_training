@@ -1,0 +1,63 @@
+1.Display the first name, last name, city and state for all customers who live in the same state as customer number 170 (Customers table).
+
+
+SELECT [First_Name]
+      ,[Last_Name]
+      ,[City]
+      ,[State]
+  FROM [ACDB].[dbo].[customers] WHERE [State] = 
+  (SELECT [State] FROM [ACDB].[dbo].[customers] WHERE [Customer_Id] = 170)
+  
+  
+2.Display the package number, internet speed and sector number for all packages whose sector number equals to the sector number of package number 10 (Packages table).
+
+
+SELECT [pack_id]
+      ,[speed]
+      ,[sector_id]
+  FROM [ACDB].[dbo].[packages] WHERE [sector_id] = 
+  (SELECT [sector_id] FROM [ACDB].[dbo].[packages] WHERE [pack_id] = 10)
+
+
+3.Display the first name, last name and join date for all customers who joined the company after customer number 540 (Customers table).
+
+
+SELECT [First_Name]
+      ,[Last_Name]
+      ,[Join_Date]
+FROM [ACDB].[dbo].[customers] WHERE [Join_Date] >= 
+  (SELECT [Join_Date] FROM [ACDB].[dbo].[customers] WHERE [Customer_Id] = 540)
+
+
+4.Display the first name, last name, city, state and package number for all customers whose internet speed is “5Mbps” (Customers and Packages table).
+
+
+ SELECT customers.First_Name
+       ,customers.Last_Name
+       ,customers.City
+	      ,customers.State
+	     ,packages.pack_id
+FROM customers JOIN packages ON customers.pack_id = packages.pack_id WHERE packages.speed = '5Mbps'
+
+
+5.Display the first name, monthly discount, package number, main phone number and secondary phone number for all customers whose sector name is Business (Customers, Packages and Sectors tables).
+
+
+
+
+6.Display the first name, monthly discount and package number for all customers whose monthly payment is greater than the average monthly payment (Customers and Packages table).
+
+
+
+
+7.Display all the data from Packages table for packages whose internet speed equals to the internet speed of package number 30, and whose monthly payment is greater than the monthly payment of package number 7 (Packages table).
+
+
+
+8.Display the package number, internet speed and monthly payment for all packages whose monthly payment is lower than the minimum monthly payment of packages with internet speed equals to “5Mbps” (Packages table).
+
+
+
+9.Display the first name, monthly discount and package number for all customers whose monthly discount is upper than the average monthly discount, and whose package number is the same as customer named “Kevin”
+
+
