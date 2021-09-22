@@ -43,11 +43,26 @@ FROM customers JOIN packages ON customers.pack_id = packages.pack_id WHERE packa
 5.Display the first name, monthly discount, package number, main phone number and secondary phone number for all customers whose sector name is Business (Customers, Packages and Sectors tables).
 
 
+ SELECT customers.First_Name
+       ,customers.monthly_discount
+	   ,packages.pack_id
+       ,customers.main_phone_num
+	   ,customers.secondary_phone_num
+FROM customers JOIN packages ON customers.pack_id = packages.pack_id 
+JOIN sectors ON sectors.sector_id = packages.sector_id
+where sectors.sector_name = 'Business'
 
 
 6.Display the first name, monthly discount and package number for all customers whose monthly payment is greater than the average monthly payment (Customers and Packages table).
 
 
+ SELECT customers.First_Name
+       ,customers.monthly_discount
+	   ,packages.pack_id
+       ,customers.main_phone_num
+	   ,customers.secondary_phone_num
+FROM customers JOIN packages ON customers.pack_id = packages.pack_id WHERE packages.monthly_payment >
+(Select AVG (monthly_payment) AS PaymentAvg FROM packages)
 
 
 7.Display all the data from Packages table for packages whose internet speed equals to the internet speed of package number 30, and whose monthly payment is greater than the monthly payment of package number 7 (Packages table).
@@ -59,5 +74,17 @@ FROM customers JOIN packages ON customers.pack_id = packages.pack_id WHERE packa
 
 
 9.Display the first name, monthly discount and package number for all customers whose monthly discount is upper than the average monthly discount, and whose package number is the same as customer named “Kevin”
+
+
+
+
+
+
+
+
+
+
+
+
 
 
