@@ -58,6 +58,6 @@ SELECT customers.First_Name
 	   ,packages.monthly_payment
 	   ,sectors.sector_name
   FROM customers JOIN dbo.packages ON customers.pack_id = packages.pack_id 
-  JOIN sectors ON packages.sector_id = sectors.sector_id WHERE sectors.sector_name = 'Private' AND customers.Join_Date LIKE '2006%'
+  JOIN sectors ON packages.sector_id = sectors.sector_id WHERE sectors.sector_name = 'Private' AND customers.Join_Date LIKE '2006%' 
 
 
