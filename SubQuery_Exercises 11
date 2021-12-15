@@ -108,4 +108,4 @@ SELECT First_Name
       ,pack_id
 FROM customers WHERE monthly_discount > (Select AVG (monthly_discount) AS PaymentAvg FROM Viborka) AND pack_id =
 (SELECT pack_id FROM customers WHERE First_Name = 'Kevin')
-
+ 
