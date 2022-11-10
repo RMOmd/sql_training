@@ -61,3 +61,5 @@ SELECT customers.First_Name
   JOIN sectors ON packages.sector_id = sectors.sector_id WHERE sectors.sector_name = 'Private' AND customers.Join_Date LIKE '2006%' 
 
 
+
+
